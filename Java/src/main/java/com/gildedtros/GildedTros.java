@@ -7,34 +7,34 @@ import java.util.stream.Collectors;
 
 import com.gildedtros.itemTypes.BackstagePass;
 import com.gildedtros.itemTypes.GoodWine;
-import com.gildedtros.itemTypes.Normal;
+import com.gildedtros.itemTypes.LegendaryItem;
 
 class GildedTros {
-    private static final Class<ItemExtension> NORMAL_CLASS = ItemExtension.class;
+    private static final Class<NormalItem> NORMAL_CLASS = NormalItem.class;
 
     private static final Map<String, String> SPECIALIZED_CLASSES =
-    		Map.of(
-				"Normal", Normal.class.getName(),
-	            "Good Wine", GoodWine.class.getName(),
-	            "Backstage pass", BackstagePass.class.getName());
+		Map.of(
+            "Good Wine", GoodWine.class.getName(),
+            "B-DAWG Keychain", LegendaryItem.class.getName(),
+            "Backstage passes for Re:Factor", BackstagePass.class.getName(),
+            "Backstage passes for HAXX", BackstagePass.class.getName());
     
-    Item[] items;
+    	Item[] items;
 
     public GildedTros(Item[] items) {
         this.items = items;
     }
     
     public void updateQuality() {
-    	
     	List<Item> itemList = Arrays.asList(items);
-    	List<ItemExtension> itemExtensionList = itemList.stream().map(i -> new ItemExtension(i.name, i.sellIn, i.quality)).map(this::qualityUpdater).collect(Collectors.toList());
-    	for (ItemExtension itemExtension : itemExtensionList) {
+    	List<NormalItem> itemExtensionList = itemList.stream().map(i -> new NormalItem(i.name, i.sellIn, i.quality)).map(this::qualityUpdater).collect(Collectors.toList());
+    	for (NormalItem itemExtension : itemExtensionList) {
 			itemExtension.updateQuality();
 		}
     	items = itemExtensionList.toArray(new Item[itemExtensionList.size()]);
     }
 
-    private ItemExtension qualityUpdater(final Item item) {
+    private NormalItem qualityUpdater(final Item item) {
         Class<?> clazz;
 
         try {
@@ -44,7 +44,7 @@ class GildedTros {
         }
 
         try {
-            return (ItemExtension) clazz.getConstructor(String.class, int.class, int.class)
+            return (NormalItem) clazz.getConstructor(String.class, int.class, int.class)
                     .newInstance(item.name, item.sellIn, item.quality);
         } catch (Exception e) {
             // log failure for the item here
