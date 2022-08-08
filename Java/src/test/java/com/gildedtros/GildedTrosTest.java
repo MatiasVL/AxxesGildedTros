@@ -18,10 +18,9 @@ class GildedTrosTest {
 		assertEquals("Backstage passes for Re:Factor, 14, 21", app.items[5].toString());
 		assertEquals("Backstage passes for Re:Factor, 9, 50", app.items[6].toString());
 		assertEquals("Backstage passes for HAXX, 4, 50", app.items[7].toString());
-		// TODO uncomment and fix test after implementing additional functionality
-//        assertEquals("fixme", app.items[8].toString());
-//        assertEquals("fixme", app.items[9].toString());
-//        assertEquals("fixme", app.items[10].toString());
+        assertEquals("Duplicate Code, 2, 4", app.items[8].toString());
+        assertEquals("Long Methods, 2, 4", app.items[9].toString());
+        assertEquals("Ugly Variable Names, 2, 4", app.items[10].toString());
 	}
 	
 	
@@ -40,10 +39,9 @@ class GildedTrosTest {
 		assertEquals("Backstage passes for Re:Factor, 10, 25", app.items[5].toString());
 		assertEquals("Backstage passes for Re:Factor, 5, 50", app.items[6].toString());
 		assertEquals("Backstage passes for HAXX, 0, 50", app.items[7].toString());
-		// TODO uncomment and fix test after implementing additional functionality
-//        assertEquals("fixme", app.items[8].toString());
-//        assertEquals("fixme", app.items[9].toString());
-//        assertEquals("fixme", app.items[10].toString());
+        assertEquals("Duplicate Code, -2, 0", app.items[8].toString());
+        assertEquals("Long Methods, -2, 0", app.items[9].toString());
+        assertEquals("Ugly Variable Names, -2, 0", app.items[10].toString());
 	}
 	
 	@Test
@@ -61,10 +59,9 @@ class GildedTrosTest {
 		assertEquals("Backstage passes for Re:Factor, 3, 41", app.items[5].toString());
 		assertEquals("Backstage passes for Re:Factor, -2, 0", app.items[6].toString());
 		assertEquals("Backstage passes for HAXX, -7, 0", app.items[7].toString());
-		// TODO uncomment and fix test after implementing additional functionality
-//        assertEquals("fixme", app.items[8].toString());
-//        assertEquals("fixme", app.items[9].toString());
-//        assertEquals("fixme", app.items[10].toString());
+        assertEquals("Duplicate Code, -9, 0", app.items[8].toString());
+        assertEquals("Long Methods, -9, 0", app.items[9].toString());
+        assertEquals("Ugly Variable Names, -9, 0", app.items[10].toString());
 	}
 	
 	private Item[] buildNewItems() {
