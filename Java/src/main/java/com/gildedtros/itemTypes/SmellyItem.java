@@ -2,8 +2,7 @@ package com.gildedtros.itemTypes;
 
 import com.gildedtros.util.Const;
 
-public class SmellyItem extends DefaultItem{
-
+public class SmellyItem extends DefaultItem {
 	public SmellyItem(String name, int sellIn, int quality) {
 		super(name, sellIn, quality);
 	}

@@ -23,7 +23,6 @@ class GildedTrosTest {
         assertEquals("Ugly Variable Names, 2, 4", app.items[10].toString());
 	}
 	
-	
 	@Test
 	void testAllItemsFor5Periods() {
 		Item[] items = buildNewItems();

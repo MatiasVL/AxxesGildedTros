@@ -2,8 +2,7 @@ package com.gildedtros.itemTypes;
 
 import com.gildedtros.util.Const;
 
-public class BackstagePass extends DefaultItem{
-
+public class BackstagePass extends DefaultItem {
 	public BackstagePass(String name, int sellIn, int quality) {
 		super(name, sellIn, quality);
 	}

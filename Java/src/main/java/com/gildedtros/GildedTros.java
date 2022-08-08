@@ -42,5 +42,4 @@ class GildedTros {
         }
         return defaultItem;
     }
-
 }

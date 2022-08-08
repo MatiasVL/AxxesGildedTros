@@ -2,7 +2,7 @@ package com.gildedtros.itemTypes;
 
 import com.gildedtros.util.Const;
 
-public class GoodWine extends DefaultItem{
+public class GoodWine extends DefaultItem {
 
 	public GoodWine(String name, int sellIn, int quality) {
 		super(name, sellIn, quality);
@@ -15,5 +15,4 @@ public class GoodWine extends DefaultItem{
 		}
 		sellIn--;
 	} 
-
 }

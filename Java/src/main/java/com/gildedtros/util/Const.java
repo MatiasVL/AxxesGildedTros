@@ -10,5 +10,4 @@ public class Const {
 	public static final int BACKSTAGE_PASS_URGENCY_TIME_LIMIT = 10;
 	public static final int BACKSTAGE_PASS_URGENCY_QUALITY_INCREASE = 2;
 	public static final int SMELLY_ITEMS_QUALITY_DECREASE_FACTOR = 2;
-	
 }

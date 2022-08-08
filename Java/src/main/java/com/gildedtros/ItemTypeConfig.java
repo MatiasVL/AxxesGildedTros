@@ -7,7 +7,6 @@ import com.gildedtros.itemTypes.GoodWine;
 import com.gildedtros.itemTypes.LegendaryItem;
 import com.gildedtros.itemTypes.SmellyItem;
 import com.gildedtros.itemTypes.DefaultItem;
-
 public class ItemTypeConfig {
 	public static final Class<DefaultItem> DEFAULT_CLASS = DefaultItem.class;
 
