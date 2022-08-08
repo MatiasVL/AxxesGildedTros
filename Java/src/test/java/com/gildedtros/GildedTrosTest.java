@@ -26,7 +26,7 @@ class GildedTrosTest {
 
 
 	@Test
-	void testAllItemsForFivePeriods() {
+	void testAllItemsFor5Periods() {
 		Item[] items = buildNewItems();
 		GildedTros app = new GildedTros(items);
 		for (int i = 0; i < 5; i++) {
@@ -40,6 +40,27 @@ class GildedTrosTest {
 		assertEquals("Backstage passes for Re:Factor, 10, 25", app.items[5].toString());
 		assertEquals("Backstage passes for Re:Factor, 5, 50", app.items[6].toString());
 		assertEquals("Backstage passes for HAXX, 0, 50", app.items[7].toString());
+		// TODO uncomment and fix test after implementing additional functionality
+//        assertEquals("fixme", app.items[8].toString());
+//        assertEquals("fixme", app.items[9].toString());
+//        assertEquals("fixme", app.items[10].toString());
+	}
+	
+	@Test
+	void testAllItemsFor12Periods() {
+		Item[] items = buildNewItems();
+		GildedTros app = new GildedTros(items);
+		for (int i = 0; i < 12; i++) {
+			app.updateQuality();
+		}
+		assertEquals("Ring of Cleansening Code, -2, 6", app.items[0].toString());
+		assertEquals("Good Wine, -10, 22", app.items[1].toString());
+		assertEquals("Elixir of the SOLID, -7, 0", app.items[2].toString());
+		assertEquals("B-DAWG Keychain, 0, 80", app.items[3].toString());
+		assertEquals("B-DAWG Keychain, -1, 80", app.items[4].toString());
+		assertEquals("Backstage passes for Re:Factor, 3, 41", app.items[5].toString());
+		assertEquals("Backstage passes for Re:Factor, -2, 0", app.items[6].toString());
+		assertEquals("Backstage passes for HAXX, -7, 0", app.items[7].toString());
 		// TODO uncomment and fix test after implementing additional functionality
 //        assertEquals("fixme", app.items[8].toString());
 //        assertEquals("fixme", app.items[9].toString());
