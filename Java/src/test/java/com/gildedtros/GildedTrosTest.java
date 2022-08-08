@@ -9,7 +9,7 @@ class GildedTrosTest {
 	void testAllItemsForOnePeriod() {
 		Item[] items = buildNewItems();
 		GildedTros app = new GildedTros(items);
-		app.updateQuality();
+		app.updateQuality(1);
 		assertEquals("Ring of Cleansening Code, 9, 19", app.items[0].toString());
 		assertEquals("Good Wine, 1, 1", app.items[1].toString());
 		assertEquals("Elixir of the SOLID, 4, 6", app.items[2].toString());
@@ -28,9 +28,7 @@ class GildedTrosTest {
 	void testAllItemsFor5Periods() {
 		Item[] items = buildNewItems();
 		GildedTros app = new GildedTros(items);
-		for (int i = 0; i < 5; i++) {
-			app.updateQuality();
-		}
+		app.updateQuality(5);
 		assertEquals("Ring of Cleansening Code, 5, 15", app.items[0].toString());
 		assertEquals("Good Wine, -3, 5", app.items[1].toString());
 		assertEquals("Elixir of the SOLID, 0, 2", app.items[2].toString());
@@ -48,9 +46,7 @@ class GildedTrosTest {
 	void testAllItemsFor12Periods() {
 		Item[] items = buildNewItems();
 		GildedTros app = new GildedTros(items);
-		for (int i = 0; i < 12; i++) {
-			app.updateQuality();
-		}
+		app.updateQuality(12);
 		assertEquals("Ring of Cleansening Code, -2, 6", app.items[0].toString());
 		assertEquals("Good Wine, -10, 12", app.items[1].toString());
 		assertEquals("Elixir of the SOLID, -7, 0", app.items[2].toString());
@@ -66,17 +62,17 @@ class GildedTrosTest {
 	
 	private Item[] buildNewItems() {
 		Item[] items = new Item[] { 
-				new Item("Ring of Cleansening Code", 10, 20), 
-				new Item("Good Wine", 2, 0),
-				new Item("Elixir of the SOLID", 5, 7), 
-				new Item("B-DAWG Keychain", 0, 80),
-				new Item("B-DAWG Keychain", -1, 80), 
-				new Item("Backstage passes for Re:Factor", 15, 20),
-				new Item("Backstage passes for Re:Factor", 10, 49), 
-				new Item("Backstage passes for HAXX", 5, 49),
-				new Item("Duplicate Code", 3, 6), 
-				new Item("Long Methods", 3, 6),
-				new Item("Ugly Variable Names", 3, 6) 
+			new Item("Ring of Cleansening Code", 10, 20), 
+			new Item("Good Wine", 2, 0),
+			new Item("Elixir of the SOLID", 5, 7), 
+			new Item("B-DAWG Keychain", 0, 80),
+			new Item("B-DAWG Keychain", -1, 80), 
+			new Item("Backstage passes for Re:Factor", 15, 20),
+			new Item("Backstage passes for Re:Factor", 10, 49), 
+			new Item("Backstage passes for HAXX", 5, 49),
+			new Item("Duplicate Code", 3, 6), 
+			new Item("Long Methods", 3, 6),
+			new Item("Ugly Variable Names", 3, 6) 
 		};
 		return items;
 	}
