@@ -12,10 +12,10 @@ public class SmellyItem extends DefaultItem{
 		sellIn--;
 		
 		if (sellIn < Const.SELL_BY_LIMIT) {
-			quality = quality - Const.QUALITY_DECREASE_OVERTIME_ITEMS;
+			quality = quality - (Const.QUALITY_DECREASE_OVERTIME_ITEMS * Const.SMELLY_ITEMS_QUALITY_DECREASE_FACTOR);
 		}
 		else {
-			quality--;
+			quality = quality - (1 * Const.SMELLY_ITEMS_QUALITY_DECREASE_FACTOR);
 		}
 		if (quality < Const.MINIMUM_QUALITY) {
 			quality = Const.MINIMUM_QUALITY;

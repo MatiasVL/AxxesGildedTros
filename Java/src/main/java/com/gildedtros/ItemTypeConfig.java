@@ -5,6 +5,7 @@ import java.util.Map;
 import com.gildedtros.itemTypes.BackstagePass;
 import com.gildedtros.itemTypes.GoodWine;
 import com.gildedtros.itemTypes.LegendaryItem;
+import com.gildedtros.itemTypes.SmellyItem;
 import com.gildedtros.itemTypes.DefaultItem;
 
 public class ItemTypeConfig {
@@ -14,5 +15,8 @@ public class ItemTypeConfig {
             "Good Wine", GoodWine.class.getName(),
             "B-DAWG Keychain", LegendaryItem.class.getName(),
             "Backstage passes for Re:Factor", BackstagePass.class.getName(),
-            "Backstage passes for HAXX", BackstagePass.class.getName());
+            "Backstage passes for HAXX", BackstagePass.class.getName(),
+            "Duplicate Code", SmellyItem.class.getName(),
+            "Long Methods", SmellyItem.class.getName(),
+            "Ugly Variable Names", SmellyItem.class.getName());
 }
