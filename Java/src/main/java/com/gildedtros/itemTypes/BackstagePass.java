@@ -1,15 +1,15 @@
 package com.gildedtros.itemTypes;
 
-import com.gildedtros.Item;
+import com.gildedtros.ItemExtension;
 import com.gildedtros.util.Const;
 
-public class BackstagePass extends Item{
+public class BackstagePass extends ItemExtension{
 
 	public BackstagePass(String name, int sellIn, int quality) {
 		super(name, sellIn, quality);
 	}
 	
-	public void updateQuality() {
+	public ItemExtension updateQuality() {
 		if (sellIn < Const.SELL_BY_LIMIT) {
 			quality = Const.MINIMUM_QUALITY;
 		}
@@ -28,5 +28,6 @@ public class BackstagePass extends Item{
 		}
 		
 		sellIn--;
+		return this;
 	} 
 }

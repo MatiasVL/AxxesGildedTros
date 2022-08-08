@@ -1,16 +1,16 @@
 package com.gildedtros.itemTypes;
 
-import com.gildedtros.Item;
+import com.gildedtros.ItemExtension;
 import com.gildedtros.util.Const;
 
-public class Normal extends Item {
+public class Normal extends ItemExtension {
 	
 
 	public Normal(String name, int sellIn, int quality) {
 		super(name, sellIn, quality);
 	}
 	
-	public void updateQuality() {
+	public ItemExtension updateQuality() {
 		if (sellIn < Const.SELL_BY_LIMIT) {
 			quality = quality - Const.QUALITY_DECREASE_OVERTIME_ITEMS;
 		}
@@ -22,6 +22,7 @@ public class Normal extends Item {
 		}
 
 		sellIn--;
+		return this;
 	} 
 
 }

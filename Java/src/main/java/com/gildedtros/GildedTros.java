@@ -3,13 +3,14 @@ package com.gildedtros;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import com.gildedtros.itemTypes.BackstagePass;
 import com.gildedtros.itemTypes.GoodWine;
 import com.gildedtros.itemTypes.Normal;
 
 class GildedTros {
-    private static final Class<Item> NORMAL_CLASS = Item.class;
+    private static final Class<ItemExtension> NORMAL_CLASS = ItemExtension.class;
 
     private static final Map<String, String> SPECIALIZED_CLASSES =
     		Map.of(
@@ -17,12 +18,6 @@ class GildedTros {
 	            "Good Wine", GoodWine.class.getName(),
 	            "Backstage pass", BackstagePass.class.getName());
     
-//    private List<Item> items;
-//
-//    GildedTros(final List<Item> items) {
-//        this.items = items;
-//    }
-		
     Item[] items;
 
     public GildedTros(Item[] items) {
@@ -30,11 +25,16 @@ class GildedTros {
     }
     
     public void updateQuality() {
+    	
     	List<Item> itemList = Arrays.asList(items);
-    	this.items = (Item[]) itemList.stream().map(this::qualityUpdater).toArray();
+    	List<ItemExtension> itemExtensionList = itemList.stream().map(i -> new ItemExtension(i.name, i.sellIn, i.quality)).map(this::qualityUpdater).collect(Collectors.toList());
+    	for (ItemExtension itemExtension : itemExtensionList) {
+			itemExtension.updateQuality();
+		}
+    	items = itemExtensionList.toArray(new Item[itemExtensionList.size()]);
     }
 
-    private Item qualityUpdater(final Item item) {
+    private ItemExtension qualityUpdater(final Item item) {
         Class<?> clazz;
 
         try {
@@ -44,7 +44,7 @@ class GildedTros {
         }
 
         try {
-            return (Item) clazz.getConstructor(String.class, int.class, int.class)
+            return (ItemExtension) clazz.getConstructor(String.class, int.class, int.class)
                     .newInstance(item.name, item.sellIn, item.quality);
         } catch (Exception e) {
             // log failure for the item here
