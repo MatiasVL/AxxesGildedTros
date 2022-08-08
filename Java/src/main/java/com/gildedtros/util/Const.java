@@ -9,5 +9,4 @@ public class Const {
 	public static final int BACKSTAGE_PASS_HIGH_URGENCY_QUALITY_INCREASE = 3;
 	public static final int BACKSTAGE_PASS_URGENCY_TIME_LIMIT = 10;
 	public static final int BACKSTAGE_PASS_URGENCY_QUALITY_INCREASE = 2;
-
 }

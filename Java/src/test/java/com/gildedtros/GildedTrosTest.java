@@ -33,7 +33,7 @@ class GildedTrosTest {
 			app.updateQuality();
 		}
 		assertEquals("Ring of Cleansening Code, 5, 15", app.items[0].toString());
-		assertEquals("Good Wine, -3, 8", app.items[1].toString());
+		assertEquals("Good Wine, -3, 5", app.items[1].toString());
 		assertEquals("Elixir of the SOLID, 0, 2", app.items[2].toString());
 		assertEquals("B-DAWG Keychain, 0, 80", app.items[3].toString());
 		assertEquals("B-DAWG Keychain, -1, 80", app.items[4].toString());
@@ -54,7 +54,7 @@ class GildedTrosTest {
 			app.updateQuality();
 		}
 		assertEquals("Ring of Cleansening Code, -2, 6", app.items[0].toString());
-		assertEquals("Good Wine, -10, 22", app.items[1].toString());
+		assertEquals("Good Wine, -10, 12", app.items[1].toString());
 		assertEquals("Elixir of the SOLID, -7, 0", app.items[2].toString());
 		assertEquals("B-DAWG Keychain, 0, 80", app.items[3].toString());
 		assertEquals("B-DAWG Keychain, -1, 80", app.items[4].toString());
