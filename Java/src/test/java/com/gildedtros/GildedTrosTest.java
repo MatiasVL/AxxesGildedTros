@@ -33,7 +33,7 @@ class GildedTrosTest {
 		assertEquals("Elixir of the SOLID, 0, 2", app.items[2].toString());
 		assertEquals("B-DAWG Keychain, 0, 80", app.items[3].toString());
 		assertEquals("B-DAWG Keychain, -1, 80", app.items[4].toString());
-		assertEquals("Backstage passes for Re:Factor, 10, 25", app.items[5].toString());
+		assertEquals("Backstage passes for Re:Factor, 10, 26", app.items[5].toString());
 		assertEquals("Backstage passes for Re:Factor, 5, 50", app.items[6].toString());
 		assertEquals("Backstage passes for HAXX, 0, 50", app.items[7].toString());
         assertEquals("Duplicate Code, -2, 0", app.items[8].toString());
@@ -51,7 +51,7 @@ class GildedTrosTest {
 		assertEquals("Elixir of the SOLID, -7, 0", app.items[2].toString());
 		assertEquals("B-DAWG Keychain, 0, 80", app.items[3].toString());
 		assertEquals("B-DAWG Keychain, -1, 80", app.items[4].toString());
-		assertEquals("Backstage passes for Re:Factor, 3, 41", app.items[5].toString());
+		assertEquals("Backstage passes for Re:Factor, 3, 43", app.items[5].toString());
 		assertEquals("Backstage passes for Re:Factor, -2, 0", app.items[6].toString());
 		assertEquals("Backstage passes for HAXX, -7, 0", app.items[7].toString());
         assertEquals("Duplicate Code, -9, 0", app.items[8].toString());

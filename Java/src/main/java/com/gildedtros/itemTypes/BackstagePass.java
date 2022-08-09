@@ -8,6 +8,8 @@ public class BackstagePass extends DefaultItem {
 	}
 	
 	public void updateQuality() {
+		sellIn--;
+		
 		if (sellIn < Const.SELL_BY_LIMIT) {
 			quality = Const.MINIMUM_QUALITY;
 		}
@@ -23,8 +25,6 @@ public class BackstagePass extends DefaultItem {
 		
 		if (quality > Const.QUALITY_LIMIT) {
 			quality = Const.QUALITY_LIMIT;
-		}
-		
-		sellIn--;
+		}		
 	} 
 }

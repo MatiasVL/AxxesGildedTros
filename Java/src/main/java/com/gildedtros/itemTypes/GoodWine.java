@@ -9,10 +9,11 @@ public class GoodWine extends DefaultItem {
 	}
 	
 	public void updateQuality() {
+		sellIn--;
+		
 		//TODO unclear from requirements if the quality of good wine should increase 2X if sellIn is below 0. This was not implemented here, but should be discussed with the client
 		if (quality < Const.QUALITY_LIMIT) {
 			quality++;
 		}
-		sellIn--;
 	} 
 }
